@@ -195,7 +195,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
 <script>
 const CLUES=[{"id":1,"word":"DERIVADA","clue":"Concepto matemático que se utiliza para calcular la pendiente de la recta tangente a una curva en un punto contenido en esta."},{"id":2,"word":"APROXIMAR","clue":"Nombre de la acción que se relaciona con el cálculo de un límite."},{"id":3,"word":"DISCONTINUA","clue":"Nombre de una función f cuyo límite alrededor de x = a existe en los reales, pero f(a) no está definida."},{"id":4,"word":"CONTINUA","clue":"Tipo de función cuyo límite alrededor de un punto es igual al valor de la imagen en dicho punto."},{"id":5,"word":"PENDIENTE","clue":"Inclinación de la recta tangente que equivale a la derivada de la función en un punto."},{"id":6,"word":"CRECIENTE","clue":"Monotonía que tiene una función cuando la primera derivada en los puntos de un intervalo es siempre positiva."},{"id":7,"word":"ASINTOTA","clue":"Nombre de la recta horizontal cuya ecuación está asociada al valor de convergencia de un límite al infinito de una función real."},{"id":8,"word":"IMPLICITA","clue":"Tipo de derivada que se utiliza cuando una función no está despejada en términos de una sola variable."},{"id":9,"word":"LATERALES","clue":"Nombre de los límites que se calculan a través de aproximaciones para valores que son únicamente mayores al valor de tendencia o únicamente menores al valor de tendencia."},{"id":10,"word":"LIMITE","clue":"Concepto que describe el valor al que se aproxima una función cuando la variable independiente se acerca a un punto determinado."},{"id":11,"word":"CONVERGENTE","clue":"Nombre que se le da a una función cuando se calcula un límite y su valor existe en los reales."},{"id":12,"word":"HORIZONTAL","clue":"Tipo de asíntota que se genera cuando el límite de una función real evaluado al infinito converge a un número real."},{"id":13,"word":"VERTICAL","clue":"Tipo de asíntota que se genera cuando el límite evaluado alrededor de un valor real da infinito como resultado."},{"id":14,"word":"DIVERGENTE","clue":"Tipo de función cuyo límite alrededor de un punto da como resultado un infinito."},{"id":15,"word":"FINITO","clue":"Tipo de límite que se obtiene cuando se analiza un límite al infinito pero su resultado es un número real."},{"id":16,"word":"REGLADELACADENA","clue":"Regla de derivación donde se multiplica la derivada de la función externa por la derivada de la función interna."}];
 const PTS=10;
-const SCRIPT_URL="https://script.google.com/macros/s/AKfycbxGdtB-XdlZxKrCwxkLDa2k9AYnr3mNscYbvUQGYx70mAeZ6IOdkmKZt8oP9N7WgwEpnQ/exec";
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbx4McV4iv7uRhzrLFB-EV5ihTiFX5zJe2_hs1wuGRjxSnyBOX5xdi4EWOSNKNmsIGDUww/exec";
 const CURSO="Cálculo 1";
 const CURSO_CORTO = {
   'Introducción al Cálculo': 'Intro',
@@ -563,12 +563,15 @@ async function submitActivity(timeUp=false){
   const saveEl=document.getElementById('score-save');
   if(!SCRIPT_URL){saveEl.textContent='⚠ Resultado no guardado (sin Google Sheets configurado).';return;}
   saveEl.textContent='⏳ Guardando en Google Sheets…';
-  try{
-    syncProgress('final', score);
-    saveEl.textContent='✅ Resultado guardado en Google Sheets.';
-  }catch(err){
-    saveEl.textContent='❌ Error al guardar. Avisa a tu docente.';
-  }
+  // Wait 1.5s to ensure any in-flight 'progreso' requests arrive before 'final'
+  setTimeout(()=>{
+    try{
+      syncProgress('final', score);
+      saveEl.textContent='✅ Resultado guardado en Google Sheets.';
+    }catch(err){
+      saveEl.textContent='❌ Error al guardar. Avisa a tu docente.';
+    }
+  }, 1500);
 }
 // Wire buttons via addEventListener (mobile-safe, avoids inline onclick issues)
 document.addEventListener('DOMContentLoaded', ()=>{
