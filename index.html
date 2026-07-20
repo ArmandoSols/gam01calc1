@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Actividad de Gamificación 01 — Cálculo 2</title>
+<title>Actividad de Gamificación 01 — Cálculo 1</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0f1923;--paper:#f8f4ed;--cream:#fffef9;--accent:#b5451b;--gold:#c9941a;--teal:#1a7a6e;--red:#c0392b;--border:#0f1923;--shadow:6px 6px 0 #0f1923}
@@ -96,7 +96,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
 </head>
 <body>
 <header>
-  <div class="logo">Actividad de Gamificación 01 — Cálculo 2</div>
+  <div class="logo">Actividad de Gamificación 01 — Cálculo 1</div>
   <div style="display:flex;align-items:center;gap:1rem">
     <div id="timer-box" style="display:none;flex-direction:column;align-items:flex-end">
       <div class="timer-label">Tiempo restante</div>
@@ -110,7 +110,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
   <div class="card-wrap">
     <div class="card">
       <h2 class="card-title">Registro del Estudiante</h2>
-      <p class="card-sub">Cálculo 2</p>
+      <p class="card-sub">Cálculo 1</p>
       <div class="field">
         <label>Apellidos</label>
         <input type="text" id="inp-apellidos" placeholder="Ej: González Pérez" autocomplete="off">
@@ -151,7 +151,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
     <div class="info-item"><span>Estudiante</span><strong id="disp-nombre">—</strong></div>
     <div class="info-item"><span>Día</span><strong id="disp-dia">—</strong></div>
     <div class="info-item"><span>Horario</span><strong id="disp-horario">—</strong></div>
-    <div class="info-item"><span>Curso</span><strong>Cálculo 2</strong></div>
+    <div class="info-item"><span>Curso</span><strong>Cálculo 1</strong></div>
     <div class="info-item"><span>Sesión</span><strong id="disp-sesion">1</strong></div>
   </div>
   <div id="score-box">
@@ -160,7 +160,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
     <div class="score-msg" id="score-msg"></div>
     <div class="score-save" id="score-save"></div>
   </div>
-  <h2 class="puzzle-title">Actividad de Gamificación 01 — Cálculo 2</h2>
+  <h2 class="puzzle-title">Actividad de Gamificación 01 — Cálculo 1</h2>
   <p class="puzzle-instr">Lea cada definición y escriba la palabra correcta en MAYÚSCULAS, SIN ESPACIOS y SIN TILDES. Presione &quot;Verificar&quot; o Enter para confirmar cada respuesta. Tiene 2 intentos por pregunta. La sopa de letras es solo de referencia visual. Cuando termine, presione &quot;Entregar&quot;.</p>
   <div class="progress-wrap">
     <div class="progress-label"><span>Respondidas</span><span id="prog-text">0 / 0</span></div>
@@ -184,10 +184,10 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
 </div>
 
 <script>
-const CLUES=[{"id":1,"word":"TANGENTE","clue":"Función trigonométrica que se utiliza como cambio de variable en la sustitución trigonométrica cuando el integrando contiene una expresión de la forma a² + x²."},{"id":2,"word":"REGLADEBARROW","clue":"Nombre del teorema fundamental del cálculo para calcular integrales definidas donde se evalúa la antiderivada en los límites de integración."},{"id":3,"word":"COSENO","clue":"Función que usualmente se utiliza como cambio de variable cuando se integra el producto de una potencia impar de seno con una potencia par de coseno."},{"id":4,"word":"SENO","clue":"Función que usualmente se utiliza como cambio de variable cuando se integra el producto de una potencia par de seno con una potencia impar de coseno."},{"id":5,"word":"AREA","clue":"Interpretación geométrica del cálculo que determina la integral definida de una función positiva cuyos límites de integración corresponden a los valores del eje x que generan rectas verticales de acotación."},{"id":6,"word":"PORPARTES","clue":"Método de integración donde es posible descomponer la integral de un producto de funciones en una expresión más simple, donde se debe identificar la derivada de uno de los factores y la integral del otro factor."},{"id":7,"word":"LINEALES","clue":"Nombre de los factores del denominador de una fracción que precisan de una descomposición por factores parciales cuyos numeradores son constantes."},{"id":8,"word":"DIVISION","clue":"Primer procedimiento que se verifica cuando se calcula la integral de una fracción algebraica cuyo numerador y denominador corresponde a polinomios."},{"id":9,"word":"IDENTIDADES","clue":"Procedimiento que se aplica si se resuelve una integral compuesta por productos de potencias pares de seno y coseno."},{"id":10,"word":"RAZONESTRIGONOMETRICAS","clue":"Se utilizan para completar el proceso de la integración por sustitución trigonométrica, después del cambio de variable."},{"id":11,"word":"ILATE","clue":"Siglas que se pueden seguir para ubicar la prioridad de la elección de la función diferenciable en la Integración por Partes."},{"id":12,"word":"DEFINIDA","clue":"Tipo de integral que se define con límites de integración que son numéricos."},{"id":13,"word":"CICLICAS","clue":"Tipo de integrales donde la integral original aparece nuevamente en el desarrollo de la integración."},{"id":14,"word":"RACIONALES","clue":"Tipo de funciones en las que en su integral se debe aplicar división de polinomios y, en algunas ocasiones, completación de cuadrados."},{"id":15,"word":"SUSTITUCION","clue":"Tipo de integración donde se reemplaza una variable para simplificar la integración."}];
+const CLUES=[{"id":1,"word":"DERIVADA","clue":"Concepto matemático que se utiliza para calcular la pendiente de la recta tangente a una curva en un punto contenido en esta."},{"id":2,"word":"CONTINUA","clue":"Tipo de función cuyo límite alrededor de un punto es igual al valor de la imagen en dicho punto."},{"id":3,"word":"PENDIENTE","clue":"Inclinación de la recta tangente que equivale a la derivada de la función en un punto."},{"id":4,"word":"IMPLICITA","clue":"Tipo de derivada que se utiliza cuando una función no está despejada en términos de una sola variable."},{"id":5,"word":"LATERALES","clue":"Nombre de los límites que se calculan a través de aproximaciones para valores que son únicamente mayores al valor de tendencia o únicamente menores al valor de tendencia."},{"id":6,"word":"LIMITE","clue":"Concepto que describe el valor al que se aproxima una función cuando la variable independiente se acerca a un punto determinado."},{"id":7,"word":"HORIZONTAL","clue":"Tipo de asíntota que se genera cuando el límite de una función real evaluado al infinito converge a un número real."},{"id":8,"word":"VERTICAL","clue":"Tipo de asíntota que se genera cuando el límite evaluado alrededor de un valor real da infinito como resultado."},{"id":9,"word":"REGLADELACADENA","clue":"Regla de derivación donde se multiplica la derivada de la función externa por la derivada de la función interna."},{"id":10,"word":"INFINITO","clue":"Resultado que da un límite cuando el valor al que tiende el denominador es cero."},{"id":11,"word":"RACIONALIZACION","clue":"Técnica que se aplica para resolver límites de la forma 0/0 con raíces."},{"id":12,"word":"DIVERGE","clue":"Cuando un límite no existe porque da infinito se dice que ese límite:"},{"id":13,"word":"NOEXISTE","clue":"Cuando los límites laterales no coinciden, se dice que el límite:"},{"id":14,"word":"INDETERMINADO","clue":"Forma que toma un límite cuando al sustituir directamente se obtiene 0/0 o ∞/∞."},{"id":15,"word":"SUSTITUCION","clue":"Primera técnica que se intenta al calcular un límite."},{"id":16,"word":"DISCONTINUIDAD","clue":"Característica de una función en un punto donde el límite no coincide con el valor de la función."}];
 const PTS=10;
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbymIokB85aiNyiKgqer6Xs8H2Y8oJ00sa2Q1PXsQ3qvxZ_wZpf1r87MIBYy35r9lzVTBw/exec";
-const CURSO="Cálculo 2";
+const CURSO="Cálculo 1";
 const CURSO_CORTO = {
   'Introducción al Cálculo': 'Intro',
   'Cálculo 1':               'Calc1',
