@@ -207,9 +207,7 @@ function startTimer(){
   document.getElementById('timer-box').style.display = 'flex';
   updateTimerDisplay();
   timerInterval = setInterval(()=>{
-    // Always calculate from real wall-clock time so salir/volver doesn't cheat
-    const elapsed = secondsLeft > 0 ? TIME_LIMIT - secondsLeft : 0;
-    secondsLeft = Math.max(0, TIME_LIMIT - elapsed);
+    secondsLeft--;
     updateTimerDisplay();
     if(secondsLeft % 10 === 0) saveState();
     if(secondsLeft <= 0){
