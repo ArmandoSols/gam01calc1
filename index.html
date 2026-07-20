@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Actividad de Gamificación 01 — Cálculo 1</title>
+<title>Actividad de Gamificación 01 — Álgebra Lineal</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0f1923;--paper:#f8f4ed;--cream:#fffef9;--accent:#b5451b;--gold:#c9941a;--teal:#1a7a6e;--red:#c0392b;--border:#0f1923;--shadow:6px 6px 0 #0f1923}
@@ -96,7 +96,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
 </head>
 <body>
 <header>
-  <div class="logo">Actividad de Gamificación 01 — Cálculo 1</div>
+  <div class="logo">Actividad de Gamificación 01 — Álgebra Lineal</div>
   <div style="display:flex;align-items:center;gap:1rem">
     <div id="timer-box" style="display:none;flex-direction:column;align-items:flex-end">
       <div class="timer-label">Tiempo restante</div>
@@ -110,7 +110,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
   <div class="card-wrap">
     <div class="card">
       <h2 class="card-title">Registro del Estudiante</h2>
-      <p class="card-sub">Cálculo 1</p>
+      <p class="card-sub">Álgebra Lineal</p>
       <div class="field">
         <label>Apellidos</label>
         <input type="text" id="inp-apellidos" placeholder="Ej: González Pérez" autocomplete="off">
@@ -151,7 +151,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
     <div class="info-item"><span>Estudiante</span><strong id="disp-nombre">—</strong></div>
     <div class="info-item"><span>Día</span><strong id="disp-dia">—</strong></div>
     <div class="info-item"><span>Horario</span><strong id="disp-horario">—</strong></div>
-    <div class="info-item"><span>Curso</span><strong>Cálculo 1</strong></div>
+    <div class="info-item"><span>Curso</span><strong>Álgebra Lineal</strong></div>
     <div class="info-item"><span>Sesión</span><strong id="disp-sesion">1</strong></div>
   </div>
   <div id="score-box">
@@ -160,7 +160,7 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
     <div class="score-msg" id="score-msg"></div>
     <div class="score-save" id="score-save"></div>
   </div>
-  <h2 class="puzzle-title">Actividad de Gamificación 01 — Cálculo 1</h2>
+  <h2 class="puzzle-title">Actividad de Gamificación 01 — Álgebra Lineal</h2>
   <p class="puzzle-instr">Lea cada definición y escriba la palabra correcta en MAYÚSCULAS, SIN ESPACIOS y SIN TILDES. Presione &quot;Verificar&quot; o Enter para confirmar cada respuesta. Tiene 2 intentos por pregunta. La sopa de letras es solo de referencia visual. Cuando termine, presione &quot;Entregar&quot;.</p>
   <div class="progress-wrap">
     <div class="progress-label"><span>Respondidas</span><span id="prog-text">0 / 0</span></div>
@@ -184,10 +184,10 @@ header{background:var(--ink);color:var(--paper);padding:1.1rem 2rem;display:flex
 </div>
 
 <script>
-const CLUES=[{"id":1,"word":"DERIVADA","clue":"Concepto matemático que se utiliza para calcular la pendiente de la recta tangente a una curva en un punto contenido en esta."},{"id":2,"word":"CONTINUA","clue":"Tipo de función cuyo límite alrededor de un punto es igual al valor de la imagen en dicho punto."},{"id":3,"word":"PENDIENTE","clue":"Inclinación de la recta tangente que equivale a la derivada de la función en un punto."},{"id":4,"word":"IMPLICITA","clue":"Tipo de derivada que se utiliza cuando una función no está despejada en términos de una sola variable."},{"id":5,"word":"LATERALES","clue":"Nombre de los límites que se calculan a través de aproximaciones para valores que son únicamente mayores al valor de tendencia o únicamente menores al valor de tendencia."},{"id":6,"word":"LIMITE","clue":"Concepto que describe el valor al que se aproxima una función cuando la variable independiente se acerca a un punto determinado."},{"id":7,"word":"HORIZONTAL","clue":"Tipo de asíntota que se genera cuando el límite de una función real evaluado al infinito converge a un número real."},{"id":8,"word":"VERTICAL","clue":"Tipo de asíntota que se genera cuando el límite evaluado alrededor de un valor real da infinito como resultado."},{"id":9,"word":"REGLADELACADENA","clue":"Regla de derivación donde se multiplica la derivada de la función externa por la derivada de la función interna."},{"id":10,"word":"INFINITO","clue":"Resultado que da un límite cuando el valor al que tiende el denominador es cero."},{"id":11,"word":"RACIONALIZACION","clue":"Técnica que se aplica para resolver límites de la forma 0/0 con raíces."},{"id":12,"word":"DIVERGE","clue":"Cuando un límite no existe porque da infinito se dice que ese límite:"},{"id":13,"word":"NOEXISTE","clue":"Cuando los límites laterales no coinciden, se dice que el límite:"},{"id":14,"word":"INDETERMINADO","clue":"Forma que toma un límite cuando al sustituir directamente se obtiene 0/0 o ∞/∞."},{"id":15,"word":"SUSTITUCION","clue":"Primera técnica que se intenta al calcular un límite."},{"id":16,"word":"DISCONTINUIDAD","clue":"Característica de una función en un punto donde el límite no coincide con el valor de la función."}];
+const CLUES=[{"id":1,"word":"TRAZA","clue":"Corresponde a la suma de los elementos de su diagonal."},{"id":2,"word":"UNICA","clue":"Cuando un sistema es consistente independiente se dice que su solución es:"},{"id":3,"word":"ORTOGONALES","clue":"Tipo de vectores cuando su producto punto es cero."},{"id":4,"word":"INCONSISTENTE","clue":"Clasificación de un sistema de ecuaciones que no tiene solución."},{"id":5,"word":"NORMAL","clue":"Nombre del vector perpendicular al plano."},{"id":6,"word":"RECTO","clue":"La clasificación del ángulo comprendido entre los vectores u=(-1,3,5/2), v=(1,0,2/5)."},{"id":7,"word":"TRANSPUESTA","clue":"Matriz donde las columnas se cambian por filas y las filas por columnas."},{"id":8,"word":"DIAGONAL","clue":"Matriz donde los elementos de su diagonal no todos son ceros y el resto de ellos son ceros."},{"id":9,"word":"IDENTIDAD","clue":"Matriz donde los elementos de su diagonal son unos y el resto de ellos son ceros."},{"id":10,"word":"SARRUS","clue":"Método para calcular un determinante de 3x3."},{"id":11,"word":"LAPLACE","clue":"Método para calcular un determinante de orden mayor a 3."},{"id":12,"word":"OBTUSO","clue":"Sean los vectores u=(-1,1,1), v=(1,0,-2), tipo de ángulo comprendido entre estos vectores."},{"id":13,"word":"AGUDO","clue":"Tipo de ángulo comprendido entre los vectores u=(1,2,1), v=(2,1,0)."},{"id":14,"word":"PARAMETRICA","clue":"Tipo de ecuación de una recta que expresa cada variable en función de un parámetro t."},{"id":15,"word":"PARALELAS","clue":"Tipo de rectas cuando al dividir los valores de entrada de sus vectores directores dan una misma constante."},{"id":16,"word":"DIRIGIDOS","clue":"Vectores que no salen del origen."}];
 const PTS=10;
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbymIokB85aiNyiKgqer6Xs8H2Y8oJ00sa2Q1PXsQ3qvxZ_wZpf1r87MIBYy35r9lzVTBw/exec";
-const CURSO="Cálculo 1";
+const CURSO="Álgebra Lineal";
 const CURSO_CORTO = {
   'Introducción al Cálculo': 'Intro',
   'Cálculo 1':               'Calc1',
